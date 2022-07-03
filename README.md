@@ -241,6 +241,77 @@ $ adb devices
 
 ---
 
+# 우분트 한글패치 설치하기
+
+## 사전 작업
+
+- 리눅스 unzip 설치하기
+https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_unzip_%EC%84%A4%EC%B9%98
+
+- 설치
+
+__Bash__
+
+```
+wget http://cdn.naver.com/naver/NanumFont/fontfiles/NanumFont_TTF_ALL.zip
+unzip NanumFont_TTF_ALL.zip -d NanumFont
+rm -f NanumFont_TTF_ALL.zip
+mv NanumFont /usr/share/fonts/
+fc-cache -f -v
+```
+
+실행 예시
+
+__Console__
+
+```
+root@localhost:~# wget http://cdn.naver.com/naver/NanumFont/fontfiles/NanumFont_TTF_ALL.zip
+--2021-09-22 06:11:51--  http://cdn.naver.com/naver/NanumFont/fontfiles/NanumFont_TTF_ALL.zip
+Resolving cdn.naver.com (cdn.naver.com)... 211.216.46.16, 125.209.207.10, 125.209.207.38, ...
+Connecting to cdn.naver.com (cdn.naver.com)|211.216.46.16|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 14946146 (14M) [application/zip]
+Saving to: ‘NanumFont_TTF_ALL.zip’
+
+NanumFont_TTF_ALL.zip     100%[===================================>]  14.25M  5.92MB/s    in 2.4s
+
+2021-09-22 06:11:54 (5.92 MB/s) - ‘NanumFont_TTF_ALL.zip’ saved [14946146/14946146]
+```
+
+__Console__
+
+```
+root@localhost:~# unzip NanumFont_TTF_ALL.zip -d NanumFont
+Archive:  NanumFont_TTF_ALL.zip
+  inflating: NanumFont/NanumBrush.ttf
+  inflating: NanumFont/NanumGothic.ttf
+  inflating: NanumFont/NanumGothicBold.ttf
+  inflating: NanumFont/NanumGothicExtraBold.ttf
+  inflating: NanumFont/NanumMyeongjo.ttf
+  inflating: NanumFont/NanumMyeongjoBold.ttf
+  inflating: NanumFont/NanumMyeongjoExtraBold.ttf
+  inflating: NanumFont/NanumPen.ttf
+```
+
+__Console__
+
+```
+root@localhost:~# rm -f NanumFont_TTF_ALL.zip
+root@localhost:~# mv NanumFont /usr/share/fonts/
+root@localhost:~# fc-cache -f -v
+/usr/share/fonts: caching, new cache contents: 0 fonts, 5 dirs
+/usr/share/fonts/NanumFont: caching, new cache contents: 8 fonts, 0 dirs
+...
+/root/.local/share/fonts: skipping, no such directory
+/root/.fonts: skipping, no such directory
+/var/cache/fontconfig: cleaning cache directory
+/root/.cache/fontconfig: not cleaning non-existent cache directory
+/root/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+```
+
+---
+
 ## 마치며
 
 이후로 Linux 환경을 사용하는 것은 사용자에게 달렸다. 앞서 언급한 것과 같이 이렇게 구성된 Linux 환경은 여전히 한계가 많다. Docker, Snap과 같은 유용한 툴들을 사용하지 못하고, 프로그램에 따라서도 업데이트 이후 작동이 안되는 경우가 생길 수 있다. (황당하게도 apt-update로 브라우저 업데이트시 브라우저가 뻗는다. 복구 방법은 Andronix Browser 문서에 적혀 있다.)
