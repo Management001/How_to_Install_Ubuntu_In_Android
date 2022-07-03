@@ -181,7 +181,7 @@ PC에서  adb 연결 확인
 
 ## 6. Adb 에러에 대한 조치 사항
 
-* [에러 1] USB 연결 상태에서 adb devices 결과에 스마트 폰 검색이 되지 않는 경우 *
+__[에러 1] USB 연결 상태에서 adb devices 결과에 스마트 폰 검색이 되지 않는 경우__
 adb가 정상적으로 설치한 상태에서 $ adb devices에서 단말 List가 보이지 않는 경우 핸드폰 제조사 USB 드라이드가 설치되지 않아서 발생하는 것입니다. 각 제조사에 맞는 USB 통합 드라이버를 설치하면 해결이 됩니다.
 
 - 삼성 통합드라이버 다운로드
@@ -189,15 +189,55 @@ adb가 정상적으로 설치한 상태에서 $ adb devices에서 단말 List가
 - Goole USB Driver 다운로드
 
  
-[에러 2] USB 연결 상태에서 adb devices 결과가 'unauthorized' 에러가 발생하는 경우
+__[에러 2] USB 연결 상태에서 adb devices 결과가 'unauthorized' 에러가 발생하는 경우__
 adb가 정상적으로 설치한 상태에서 $ adb devices에서 unauthorized 가 표시되는 경우 스마트 폰에서 "USB 디버깅 허용"을 선택합니다.
+
+![img1 daumcdn](https://user-images.githubusercontent.com/44454495/177045534-a5723fcf-a241-41ea-b9c7-e3b5b8e0291a.png)
+
+USB 연결 상태에서 adb devices 결과가 'unauthorized' 에러가 발생하는 경우
+ 
+__[에러 3] Mirroid 실행 상태에서 ADB 실행 에러 조치 방법__
+PC에서 2개 이상의 adb가 설치된 경우입니다.  예를 들어 Mirroid 프로그램에서도 adb가 설치하고, Andorid SDK에서도 다른 버전의 Adb가 설치가 되었다면  Adb 실행 시 Version Mismatch 에러 ("adb server version (40) doesn't match this client (41); killing...​") 가 발생할 수 있습니다.
+ 
+이 경우 여러 경로에 설치된 가장 최 상위의 adb 버전으로 통일하면 문제가 해결됩니다.  미러로이드와 같은 경우 ADB 파일(adb.exe, AdbWinApi.dll, AdbWinUsbApi.dll)파일을 미러로이드 설치폴더(C:\Program Files (X86)\Mirroid)로 덮어 쓰면 문제가 해결됩니다.
+ 
+에러 메시지 
+```
+C:\User> adb shell  
+adb server version (40) doesn't match this client (41); killing...​
+* daemon started successfully 
+```
+
+![img1 daumcdn](https://user-images.githubusercontent.com/44454495/177045574-cf41f13e-3f6b-45d0-be03-0593fd6d41a5.png)
+
+Mirroid 실행 상태에서 ADB 실행 에러
+
+조치 방법
+
+최신 버전의 adb 파일 (adb.exe, AdbWinApi.dll, AdbWinUsbApi.dll)으로 통일한다.
+
+![img1 daumcdn](https://user-images.githubusercontent.com/44454495/177045586-fd0752be-57cc-49f0-83dd-76893917e93c.png)
+
+adb server version (40) doesn't match this client (41); killing..에러 조치 방법
+ 
+__[에러 4] ADB 실행 시 daemon not running 에러 조치 방법__
+adb devices 연결 시도 시  adb daemon이 정상적으로 실행해야 하지만, daemon not running 에러 메시지가 출력된다면 이전에 실행한  adb daemon이 정상적으로 종료되지 않아 Process가 살아 있기 때문에 발생하는 에러입니다.  이 경우 adb kill-server로  daemon을 kill 하던가, TaskManager에서 해당 process를 모두 kill 해야 합니다.  위와 같이 조치해도 동일한 문제가 발생하면 logout후 또는 재부팅해야 합니다. 
+
+에러 메시지 
+``` 
+* daemon not running; starting now at tcp:5037
+* daemon started successfully 
+```
+ 
+조치 방법 
+```
+$ adb kill-server
+$ adb devices
+--> daemon start message
+
+```
+
 출처: https://kibua20.tistory.com/165 [모바일 SW 개발자가 운영하는 블로그:티스토리]
-
-
-
-
-
-
 
 ---
 
@@ -214,3 +254,5 @@ adb가 정상적으로 설치한 상태에서 $ adb devices에서 unauthorized �
 1. [안드로이드 태블릿에서 코딩하기 프로그래밍하기 - 안드로이드에서 우분투 리눅스로 코딩하기](https://m.blog.naver.com/einsbon/222302444210)
 2. [Andronix Document](https://docs.andronix.app/)
 3. [Android Phantom, Cached And Empty Processes](https://gist.github.com/agnostic-apollo/dc7e47991c512755ff26bd2d31e72ca8)
+
+출처: https://gall.dcinside.com/board/view/?id=tabletpc&no=898108 [안드로이드에 Linux 설치하기 - 디시인사이드 갤러리]
