@@ -3,7 +3,7 @@
 
 # 안드로이드에 Linux 설치하기
 
-## 개요
+## 1. 개요
 
 안드로이드 환경에서는 Termux라는 Linux 터미널 에뮬레이터를 이용해 여러 가지 기능들을 사용할 수 있다. Termux는 패키지 관리자를 지원하고 이를 통해 여러 기능의 구현이 가능하기 때문에 헤비 유저들이 애용하는 툴인데, 이러한 Termux를 이용해 할 수 있는 작업들 중에는 proo 패키지를 이용해 리눅스를 설치하는 것이 있다.
 
@@ -16,7 +16,7 @@ Proot은 chroot 기능을 사용할 수 있게 해주는 패키지인데 chroot�
 본 글에서는 안드로이드 환경에서 리눅스를 구동하고 접근하기 위해 기반이 되는 앱인 Termux를 설치하고, Andronix를 통해 리눅스 환경을 구성한 뒤 VNC로 접속하는 방법에 대해 서술한 뒤 마지막으로 안드로이으 12 이상의 기기에서 백그라운드 프로세스 종료 없이 이를 활용하기 위한 Phantom Process Killer 비활성화 방법에 대해 알아보겠다.
 
 
-## Termux 설치
+## 2. Termux 설치
 
 ![1656678457](https://user-images.githubusercontent.com/44454495/177044662-44dc27d7-e1b0-4e42-aecf-3d28c3834ffd.png)
 
@@ -33,7 +33,7 @@ Termux 의 최신 버전은 F-Droid를 통해 다운받을 수 있다. F-Droid�
 
 Termux를 처음 실행하면 이미지와 같은 커맨드라인 인터페이스 (이하 CLI)가 보일 것이다. 작업은 여기서 시작된다.
 
-## Linux 배포판 (우분투 20.04) 설치하기
+## 3. Linux 배포판 (우분투 20.04) 설치하기
 
 ![1656678457](https://user-images.githubusercontent.com/44454495/177044692-a6b21aaa-f0ab-40fe-9093-4255f9c81fe3.png)
 
@@ -59,7 +59,7 @@ GUI 선택 창은 Ubuntu를 사용할 인터페이스를 선택하는 창이다.
 
 모든 설정이 끝난 뒤에는 Termux 터미널에 Unbuntu를 실행하기 위해서는 ./start-ubuntu.sh라는 명령어로 Shell 스크립트를 실행하면 된다. 이 스트립트의 이름은 유료 배포판을 이용했을 때는 ./start-andronix.sh이고, 배포판에 따라 명칭이 달라질 수 있다.
 
-## VNC 서버 설정 및 접속
+## 4. VNC 서버 설정 및 접속
 
 ![1656856466](https://user-images.githubusercontent.com/44454495/177044759-7493e369-88e1-4683-abba-222134cfad84.png)
 
@@ -79,7 +79,7 @@ vncserver-start 명령어를 입력하면 이미지와 같은 창이 뜨는데 S
 
 데스크톱 환경에 잘 접속한 것을 확인할 수 있다. VNC 서버 종료 명령어는 vncserver-stop으로 입력 후 이전에 VNC 서버를 실행한 포트 번호를 입력해주면 된다.
 
-## Phantom Process Killer 임시 해제
+## 5. Phantom Process Killer 임시 해제
 
 여기까지면 다 좋은데, 안드로이드 12부터 까다로운 제한이 생겼다. Phantom Process Killer가 백그라운드에 상주하는 프로세스의 수를 제한한다는 점이다. 본래 이 기능은 안쓰는 프로세스를 종료함으로써 기기 최적화에 도움이 되는 기능이지만 이번 글과 같이 백그라운드에서 계속 프로세스를 돌려야 하는 Termux와 같은 경우에는 매우 까다로운 제한이다. 실제로 해제 없이 사용 시 Process Terminated Status:9와 같은 오류로 Termux가 종종 뻗는다.
 
@@ -243,7 +243,7 @@ $ adb devices
 
 # 우분트 한글패치 설치하기
 
-## 사전 작업
+## 1. 사전 작업
 
 - 리눅스 unzip 설치하기
 https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_unzip_%EC%84%A4%EC%B9%98
