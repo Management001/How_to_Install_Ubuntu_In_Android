@@ -18,38 +18,40 @@ Proot은 chroot 기능을 사용할 수 있게 해주는 패키지인데 chroot�
 
 ## Termux 설치
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d512ad99367537971eaa8d14aa68b3fc90188fb41d7c2b806414241737d8933e5b26a701
+![1656678457](https://user-images.githubusercontent.com/44454495/177044662-44dc27d7-e1b0-4e42-aecf-3d28c3834ffd.png)
 
 
 먼저 Linux를 설치해보기 위해서는 안드로이드용 터미널 에뮬레이터인 Termux를 설치해야 한다. Termux는 구글 플레이 스토어 (이하 플스)에도 올라와있긴 하지만 플스의 버전은 오랫동안 업데이트되지 않은, 도태된 버전이다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d5229dd9366115264e9086b73c868d21055e33e013a7242ac3cf74d2
+![1656678457](https://user-images.githubusercontent.com/44454495/177044667-fe9ef294-0938-4a17-ab02-269138988090.png)
+
 
 Termux 의 최신 버전은 F-Droid를 통해 다운받을 수 있다. F-Droid는 일종의 서드파티 앱 스토어인데 자유 오픈소스 안드로이드 앱만을 다루는 스토어이다. 처음 들어 생소할 수도 있지만 믿을만한 곳이 걱정하지 말고 앱을 다운받으면 된다. F-Droid를 기기에 설치해 다운로드 받을 수도 있고, 웹 페이지에서 APK를 바로 다운로드 받아 설치할 수도 있다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d562cdc937459647bf3f9a70d32aebb80a1acec239a46f0a690903
+![1656856466](https://user-images.githubusercontent.com/44454495/177044683-4ec9502d-43f9-4efb-9bbe-2f978b565e6f.png)
+
 
 Termux를 처음 실행하면 이미지와 같은 커맨드라인 인터페이스 (이하 CLI)가 보일 것이다. 작업은 여기서 시작된다.
 
 ## Linux 배포판 (우분투 20.04) 설치하기
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d522ada9367537971ea12eddb5e5a710f66ca6bad7a4cbcacdd61dfded04bb276b82b784
+![1656678457](https://user-images.githubusercontent.com/44454495/177044692-a6b21aaa-f0ab-40fe-9093-4255f9c81fe3.png)
 
 Termux에서 명령어만을 사용해 Linux를 설치할 수도 있지만 이건 꽤 귀찮은 작업이고, Androinix를 이용하면 자동화된 설치 스크립트로 여러 Linux 배포판들을 설치할 수 있다. 플스에서 Andronix를 받는다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d522dd99361527264e95dfb7f97b9174e725d125bfd707478e535913b5
+![1656856466](https://user-images.githubusercontent.com/44454495/177044698-f1fa0944-ec42-4af1-8b37-f6ed16381413.png)
 
 Linux는 오픈소스 OS로 Windows, Mac OS와는 달리 같은 기원을 가졌지만 서로 다른 기능과 생김새를 가진 배포판이라는 개념이 존재한다. 이 중 많이 사용되는 것이 Ubuntu라는 배포판인데, 좌측 위의 주황색 로고가 Ubuntu의 로고이다. 본 글에서는 Ubuntu의 설치에 대해 다뤄보고자 한다. Ubuntu 로고를 터치한다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d522cdc9361527264e93e809691274fb5920533d9baf5b413d17dc79e6
+![1656856466](https://user-images.githubusercontent.com/44454495/177044717-49e024a8-8171-4026-bc6f-64ec84d476f0.png)
 
 이 창에서는 Androinix가 안드로이드에서 더 쓰기 편하게 수정한 Ubuntu 수정 배포판을 사용할 것인지, 아니면 일반 배포판을 사용할 것인지 고를 수 있는데 후자는 무료 오픈소스인데 반해 전자는 약 3,000원 정도에 유료로 제공되는 서비스이다. 본인의 경우 그렇게 큰 비용이 아니기도 하고 크게 손을 대기가 싫어서 결제를 하고 사용했다. 후자의 경우도 이후 과정이 크게 다르지는 않을 것으로 생각된다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d5329d89361527264e91d436c9ddcdb8f3bb057c836bc7b3e3516aaa27
+![1656678458](https://user-images.githubusercontent.com/44454495/177044727-24b8a75a-e654-4d1b-b776-a93c38f254c4.png)
 
 유료든 무료든 하나를 정했다면 Ubuntu 버전을 정할 수 있다. Andronix의 배포판은 장기 지원 (LTS) 버전을 기준으로 제공되고 있는데, 가능하면 20.04를 추천한다. 18.04의 지원 기간이 그렇게 많이는 남지 않았고 이미 충분히 20.04로 넘어왔을 것이기 때문이다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70b0d5329dd9361527264e91c9423ad0f37c64d2f8da9329eca8b15a1f0bb8
+![1656856466](https://user-images.githubusercontent.com/44454495/177044741-305cfd42-f7d3-4e3b-85a1-4dfde8933c01.png)
 
 GUI 선택 창은 Ubuntu를 사용할 인터페이스를 선택하는 창이다. 데스크탑 UI가 필요없다면 CLI를 고르면 되지만, 일반적으로는 그냥 Desktop Environment를 선택하면 된다. 선택한 뒤 나오는 선택창에서는 XFCE를 선택할 것을 권장한다. QT를 사용해보지는 않았지만 왠지 안드로이드 환경에서는 조금 버거울 것 같은 느낌이 들기 떄문이다.
 
@@ -59,7 +61,7 @@ GUI 선택 창은 Ubuntu를 사용할 인터페이스를 선택하는 창이다.
 
 ## VNC 서버 설정 및 접속
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70a0e5928dd937459647bf392e204881932a88a3d50009e903ef949969
+![1656856466](https://user-images.githubusercontent.com/44454495/177044759-7493e369-88e1-4683-abba-222134cfad84.png)
 
 이제 VNC 서버를 설정해야 한다. 다른 기기는 모르곘지만, 갤럭시 탭 S8 울트라의 경우 VNC 접속시 화면에 선이 생기는 형상을 막기 위해 VNC 서버의 해상도 설정을 수정해줘야 했다.
 
@@ -67,13 +69,13 @@ nano /usr/local/bin/vncserver-start 명령어를 입력하면 이미지와 같�
 
 VNC 서버를 S8 울트라의 해상도로 실행하고 접속 포트틑 1로 설정한다는 의미로, Ctrl+x로 저장하고 나오면 된다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70a09512cd2937459647bf37bf3b1e4e252230e851b66ab97391022ff10
+![1656856466](https://user-images.githubusercontent.com/44454495/177044769-db233ce7-81ff-4d5e-858c-bae08d2203b6.png)
 
 vncserver-start 명령어를 입력하면 이미지와 같은 창이 뜨는데 S8 울트라 유저의 경우 방금 수정해준 1을 선택하면 된다. 다른 탭 사용자의 경우 다른 해상도를 선택해봐도 되나 이후 VNC 접속 후 화면에 검은 줄이 생긴다면 이전 과정을 각자의 기기 해상도에 맞게 따라하면 된다.
 
 플스에서 VNC Viewer 앱을 다운받은 뒤 주소를 localhost:1로 설정하고 접속한다. 호스트 기기의 1번 포트에 접속한다는 의미이다.
 
-1ebec223e0dc2bae61abe9e74683766d1b166dbef70a095629d99376725540ef1d18db819aecd7bdb549beffdf4af4dd14f1229c8411
+![1656856466](https://user-images.githubusercontent.com/44454495/177044782-35c3f65f-de25-4ad7-9c88-a65562dd812c.png)
 
 데스크톱 환경에 잘 접속한 것을 확인할 수 있다. VNC 서버 종료 명령어는 vncserver-stop으로 입력 후 이전에 VNC 서버를 실행한 포트 번호를 입력해주면 된다.
 
@@ -85,11 +87,15 @@ vncserver-start 명령어를 입력하면 이미지와 같은 창이 뜨는데 S
 
 ADB 드라이버를 깔고 기기의 개발자 설정에서 USB 디버깅을 활성화한 뒤 다음 명령어를 입력해준다:
 
+```
 adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+```
 
 이 때 유의할 점은 이렇게 해제한 상태는 기기가 켜져있는 경우에만 유지된다는 것이다. 즉, 기기를 재부팅할 경우에는 다시 PC에서 ADB 명령어를 입력해줘야 한다. 또한 작동 방식상 기기를 부팅하고 잠금을 해제한 뒤 약 5 - 10분쯤 뒤에 이 명령어를 입력해야 적용이 된다고 하는데 이 역시 유의해야 한다.
 
 안드로이드 12L과 13에서는 Phantom Process Killer를 끄는 옵션이 개발자 옵션에 들어가 편하게 해제가 가능하다고 하는데, 업데이트가 이뤄지기 전까지는 위와 같은 임시처방 말고는 답이 없을 것으로 보인다.
+
+
 
 ## 마치며
 
