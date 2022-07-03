@@ -95,7 +95,20 @@ adb shell "/system/bin/device_config put activity_manager max_phantom_processes 
 
 안드로이드 12L과 13에서는 Phantom Process Killer를 끄는 옵션이 개발자 옵션에 들어가 편하게 해제가 가능하다고 하는데, 업데이트가 이뤄지기 전까지는 위와 같은 임시처방 말고는 답이 없을 것으로 보인다.
 
+---
+# 안드로이드 adb 설치 및 설정 방법
 
+Android ADB (Android Debug Bridge)는 PC와 스마트 폰 간에 통신을 할 수 있는 명령어도 도구입니다. 안드로이드 개발자에게는 apk 설치, log 출력의  등의 개발에 많은 활동에서 adb를 거의 매일 사용하고 있습니다. 또한 디버깅 목적뿐 아니라 스마트 폰 화면을 PC로 미러링 할 수 있는 App에서도 adb를 사용합니다. 예를 들어 scrcpy 와 Mirroid 등 같은 스마트 폰 미러링 앱을 사용하기 위해서는 PC에 adb를 미리 설치해야 합니다.  (※ Mrriod는 adb.exe가 설치 파일에 포함됨)
+
+본 포스팅은 상용 단말 (=User version) 기준으로 ADB 연결을 설정하는 과정을 설명하고 요약하면 다음과 같습니다.
+
+1. 스마프 폰 제조사 USB 드라이버를 설치 (각 제조사 홈페이지에서 USB 통합 Driver를 제공함, 링크는 다음과 같습니다. 삼성 통합드라이버, LG USB Driver , Google USB Driver) (필수)
+2. PC에서 ADB Tool 다운로드:  최신 버전 Android SdK platform tool 설치 (다운로드 링크)
+3. PC 환경 변수에 ADB 설치 Path 추가
+4. 스마트 폰의 개발자 메뉴에서 'USB 디버깅' 연결 활성화
+5. 스마트 폰과 PC 연결 시 USB 디버깅 허용 
+
+---
 
 ## 마치며
 
