@@ -108,6 +108,97 @@ Android ADB (Android Debug Bridge)는 PC와 스마트 폰 간에 통신을 할 �
 4. 스마트 폰의 개발자 메뉴에서 'USB 디버깅' 연결 활성화
 5. 스마트 폰과 PC 연결 시 USB 디버깅 허용 
 
+삼성 통합드라이버 다운로드 주소
+https://downloadcenter.samsung.com/content/SW/202012/20201229125900126/SAMSUNG_USB_Driver_for_Mobile_Phones.exe
+
+LG USB Driver 다운로드
+https://www.lge.co.kr/lgekor/download-center/downloadCenterList.do#cur
+
+Goole USB Driver 다운로드
+https://developer.android.com/studio/run/win-usb?hl=ko
+
+※ Windows용과 MAC용 LG USB 통합 드라이버(LG United Mobile Driver)를 첨부 파일로 업로드 하였습니다.
+
+## 1. PC에서 ADB Tool 다운로드: 다운로드 링크
+Android Studio SDK를 설치하는 경우에도 SDK manager를 통해서 다운로드 및 설치할 수 있고, 독립형 패키지로도 Andorid SDK platform-tools을 다운로드하여 adb를 설치할 수 있습니다.  이는 링크에서 다운로드가 가능하며 다운로드한 zip 파일(platform-tools_r30.0.5-windows.zip)을 압축 해제하면 됩니다.
+출처: https://kibua20.tistory.com/165 [모바일 SW 개발자가 운영하는 블로그:티스토리]
+
+![img1 daumcdn](https://user-images.githubusercontent.com/44454495/177045190-eb6a770b-e656-4583-82ba-948ac6eb907b.png)
+
+## 2. PC(Windows OS)에서 ADB Path를 환경 변수에 추가
+
+최신 버전의 Android SDK Tool을 다운로드하여 설치를 원하는 폴더에 압축을 풉니다. 임의의 폴더에서도 adb를 실행할 수 있도록 환경 변수 PATH에 adb 설치 경로를 추가합니다.
+ 
+1. Android SDK Tool을 통해서 platform-tools_r30.0.5-windows.zip 파일을 원하는 폴더에 압축해제
+2. 내 컴퓨터의 고급 시스템 설정 (제어판-시스템 보안-시스템-고급 시스템 설정 또는 내 컴퓨터에서 마우스 오른쪽 키)
+3. 시스템 속성 메뉴 -고급 탭에서 '환경 변수' 선택
+4. 시스템 변수 (또는 사용자 변수)에서 Path 편집
+5. Path 항목에 platform-tools을 설치한 경로를 추가 
+
+![img1 daumcdn](https://user-images.githubusercontent.com/44454495/177045233-7ae11989-4755-41eb-9679-762064c4ea3b.png)
+
+## 3. 우분투/Mac OS에서 ADB 설치
+Android SDK를 설치하면 adb가 포함된 Plaftform Tools까지 같이 설치지만, SDK 설치 없이 ADB만 별도로 패키지 매니져로  설치가 가능합니다.  우분투와 Mac에서는 별도의 Path설정은 필요 없습니다.
+
+우분투OS에서 ADB 설치 명령어 
+```
+$ sudo apt install adb 
+```
+
+
+Mac OS에서 adb설치 명령어
+```
+$ brew install android-platform-tools
+```
+
+## 4. 스마트폰에서 USB 디버깅 연결 활성화 
+
+User Debug 버전에서 USB 디버깅 옵션 메뉴가 기본 값으로 활성화 상태이지만, 일반 상용 버전 (User 버전)은 개발자 메뉴에서 디버깅 옵션을 활성화시켜야 합니다. 
+
+- 개발자 메뉴 활성화: 시스템 세팅 - 휴대폰 정보 - 소프트웨어 정보- 빌드 번호를 3번 누르기 
+- 개발자 메뉴에서 "USB 디버깅 옵션" 활성화 
+
+![img1 daumcdn](https://user-images.githubusercontent.com/44454495/177045318-c53a681f-6752-488c-b94b-55d59071d838.png)
+
+스마트폰에서 USB 디버깅 연결 활성화 
+
+## 5. USB 연결 후 adb 정상 동작 확인 
+
+Win+R키를 누르고 명령 프롬프트 창에서 $ adb devices 입력합니다.  스마트 폰 화면에서는 USB 허용 팝업을 표시하고 허용해야 연결됩니다. 
+
+![img1 daumcdn](https://user-images.githubusercontent.com/44454495/177045342-6731c1e9-1f75-42a6-ad4d-63ed107bda5c.png)
+
+스마트 폰에서 USB 연결 허용
+
+$ adb devices 실행 시 연결된 Device list를 표시하면 정상적으로 동작하는 것입니다.  adb는 상당히 많은 기능을 가지고 있습니다. 각 세부 기능은 Google 공식 문서를 참고하세요.
+
+
+Google 공식 문서
+
+https://developer.android.com/studio/command-line/adb?hl=ko
+
+PC에서  adb 연결 확인
+
+## 6. Adb 에러에 대한 조치 사항
+
+* [에러 1] USB 연결 상태에서 adb devices 결과에 스마트 폰 검색이 되지 않는 경우 *
+adb가 정상적으로 설치한 상태에서 $ adb devices에서 단말 List가 보이지 않는 경우 핸드폰 제조사 USB 드라이드가 설치되지 않아서 발생하는 것입니다. 각 제조사에 맞는 USB 통합 드라이버를 설치하면 해결이 됩니다.
+
+- 삼성 통합드라이버 다운로드
+- LG USB Driver 다운로드
+- Goole USB Driver 다운로드
+
+ 
+[에러 2] USB 연결 상태에서 adb devices 결과가 'unauthorized' 에러가 발생하는 경우
+adb가 정상적으로 설치한 상태에서 $ adb devices에서 unauthorized 가 표시되는 경우 스마트 폰에서 "USB 디버깅 허용"을 선택합니다.
+출처: https://kibua20.tistory.com/165 [모바일 SW 개발자가 운영하는 블로그:티스토리]
+
+
+
+
+
+
+
 ---
 
 ## 마치며
