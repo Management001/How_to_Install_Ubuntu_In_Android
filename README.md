@@ -95,6 +95,23 @@ adb shell "/system/bin/device_config put activity_manager max_phantom_processes 
 
 안드로이드 12L과 13에서는 Phantom Process Killer를 끄는 옵션이 개발자 옵션에 들어가 편하게 해제가 가능하다고 하는데, 업데이트가 이뤄지기 전까지는 위와 같은 임시처방 말고는 답이 없을 것으로 보인다.
 
+
+## 6. 마치며
+
+이후로 Linux 환경을 사용하는 것은 사용자에게 달렸다. 앞서 언급한 것과 같이 이렇게 구성된 Linux 환경은 여전히 한계가 많다. Docker, Snap과 같은 유용한 툴들을 사용하지 못하고, 프로그램에 따라서도 업데이트 이후 작동이 안되는 경우가 생길 수 있다. (황당하게도 apt-update로 브라우저 업데이트시 브라우저가 뻗는다. 복구 방법은 Andronix Browser 문서에 적혀 있다.)
+
+그럼에도 불구하고 태블릿과 같은 대화면 기기에서 데스크톱 환경에서만 사용할 수 있는 응용 프로그램을 사용할 수 있다는 것은 생산성 개선과 활용 측면에서 사용자에게 큰 자율성을 부여할 수 있기 때문에 그 점에서 Termux를 이용한 Linux 구동은 의의를 가진다고 판단한다. 사실 이렇게 사용자가 제조사가 원하는 의도에서 벗어나 다양한 방법으로 사용할 수 있다는 측면에서 개인적으로는 안드로이드 OS를 애플의 iOS/iPadOS보다 선호한다. 이견이 있을 수는 있겠지만, 적어도 Geek인 본인에게는 그러한 기기들이 '재미가 없다'.
+
+다른 사용자들에게 많은 도움이 된다면 좋겠다.
+
+## 7. 참고자료
+
+1. [안드로이드 태블릿에서 코딩하기 프로그래밍하기 - 안드로이드에서 우분투 리눅스로 코딩하기](https://m.blog.naver.com/einsbon/222302444210)
+2. [Andronix Document](https://docs.andronix.app/)
+3. [Android Phantom, Cached And Empty Processes](https://gist.github.com/agnostic-apollo/dc7e47991c512755ff26bd2d31e72ca8)
+
+출처: https://gall.dcinside.com/board/view/?id=tabletpc&no=898108 [안드로이드에 Linux 설치하기 - 디시인사이드 갤러리]
+
 ---
 # 안드로이드 adb 설치 및 설정 방법
 
@@ -248,7 +265,7 @@ $ adb devices
 - 리눅스 unzip 설치하기
 https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_unzip_%EC%84%A4%EC%B9%98
 
-- 설치
+## 2. 설치
 
 __Bash__
 
@@ -309,21 +326,16 @@ root@localhost:~# fc-cache -f -v
 /root/.fontconfig: not cleaning non-existent cache directory
 fc-cache: succeeded
 ```
+## 3. 같이 보기
+
+- 리눅스 나눔고딕코딩 설치 https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EB%82%98%EB%88%94%EA%B3%A0%EB%94%95%EC%BD%94%EB%94%A9_%EC%84%A4%EC%B9%98
+- TCPDF 한글 폰트 사용 https://zetawiki.com/wiki/TCPDF_%ED%95%9C%EA%B8%80_%ED%8F%B0%ED%8A%B8_%EC%82%AC%EC%9A%A9
+- X윈도우 나눔고딕 폰트 설정하기 https://zetawiki.com/wiki/X%EC%9C%88%EB%8F%84%EC%9A%B0_%EB%82%98%EB%88%94%EA%B3%A0%EB%94%95_%ED%8F%B0%ED%8A%B8_%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
+- 리눅스 폰트 폴더 /usr/share/fonts https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%ED%8F%B0%ED%8A%B8_%ED%8F%B4%EB%8D%94_/usr/share/fonts
+- 나눔폰트 https://zetawiki.com/wiki/%EB%82%98%EB%88%94%ED%8F%B0%ED%8A%B8
+
+
+출처 : https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EB%82%98%EB%88%94%ED%8F%B0%ED%8A%B8_%EC%84%A4%EC%B9%98 [리눅스_나눔폰트_설치]
+
 
 ---
-
-## 마치며
-
-이후로 Linux 환경을 사용하는 것은 사용자에게 달렸다. 앞서 언급한 것과 같이 이렇게 구성된 Linux 환경은 여전히 한계가 많다. Docker, Snap과 같은 유용한 툴들을 사용하지 못하고, 프로그램에 따라서도 업데이트 이후 작동이 안되는 경우가 생길 수 있다. (황당하게도 apt-update로 브라우저 업데이트시 브라우저가 뻗는다. 복구 방법은 Andronix Browser 문서에 적혀 있다.)
-
-그럼에도 불구하고 태블릿과 같은 대화면 기기에서 데스크톱 환경에서만 사용할 수 있는 응용 프로그램을 사용할 수 있다는 것은 생산성 개선과 활용 측면에서 사용자에게 큰 자율성을 부여할 수 있기 때문에 그 점에서 Termux를 이용한 Linux 구동은 의의를 가진다고 판단한다. 사실 이렇게 사용자가 제조사가 원하는 의도에서 벗어나 다양한 방법으로 사용할 수 있다는 측면에서 개인적으로는 안드로이드 OS를 애플의 iOS/iPadOS보다 선호한다. 이견이 있을 수는 있겠지만, 적어도 Geek인 본인에게는 그러한 기기들이 '재미가 없다'.
-
-다른 사용자들에게 많은 도움이 된다면 좋겠다.
-
-## 참고자료
-
-1. [안드로이드 태블릿에서 코딩하기 프로그래밍하기 - 안드로이드에서 우분투 리눅스로 코딩하기](https://m.blog.naver.com/einsbon/222302444210)
-2. [Andronix Document](https://docs.andronix.app/)
-3. [Android Phantom, Cached And Empty Processes](https://gist.github.com/agnostic-apollo/dc7e47991c512755ff26bd2d31e72ca8)
-
-출처: https://gall.dcinside.com/board/view/?id=tabletpc&no=898108 [안드로이드에 Linux 설치하기 - 디시인사이드 갤러리]
